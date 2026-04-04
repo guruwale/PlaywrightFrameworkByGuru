@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run tests": "npx playwright test /tests/e2eTestFlows.spec.ts"
+    "run tests": "playwright test"
   },
   "keywords": [],
   "author": "",
