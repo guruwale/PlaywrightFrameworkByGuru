@@ -43,11 +43,11 @@ export class AccountPage{
     async selectFilters(acctType:string,sortByOption:string)
     {
         await this.accountTypeDropdownLocator.click();
-        this.page.locator('//span[text()="'+acctType+'"]');
+        this.page.locator('//span[text()="'+acctType+'"]').click();
         console.log("Account type filter is selected as "+acctType);
 
         await this.sortByDropdownLocator.click();
-        await this.page.locator('//span[text()="'+sortByOption+'"]');
+        await this.page.locator('//span[text()="'+sortByOption+'"]').click();
         console.log("Sort by filter is selected as "+sortByOption);
     }
 

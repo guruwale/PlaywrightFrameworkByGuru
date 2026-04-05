@@ -38,6 +38,7 @@ test("Validate user is able to navigate to accounts page and able to see the acc
     await accountPageObj.navigateToAccountPage();
     await accountPageObj.displayAccountsDetails();
     await accountPageObj.selectFilters('Credit','Balance');
+    console.log(await page.locator('//td[text()="No accounts found"]').textContent());
     await expect(page.locator('//td[text()="No accounts found"]')).toBeVisible();
 });
 
@@ -47,7 +48,9 @@ test("Validate Reset Fileter button",async({page})=>{
     await loginPageObj.navigateToLoginPage();
     await loginPageObj.login('admin', 'admin123');
     await accountPageObj.navigateToAccountPage();
-    //await accountPageObj.selectFilters('Credit','Balance');
+    await accountPageObj.selectFilters('Credit','Balance');
     await accountPageObj.clickOnResetFilterButton();
+    let accountTypeText = await accountPageObj.accountTypeDropdownLocator.textContent();
+    console.log("Account type dropdown text is "+accountTypeText);
     await expect(accountPageObj.accountTypeDropdownLocator).toBeVisible();
 });
