@@ -1,2 +1,7 @@
 
-export class Testclass {}
+//export class Testclass {}
+
+export function captureScreenshot()
+{
+    
+}
